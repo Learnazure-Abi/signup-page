@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    <h1 style="margin-left: 550px;">Sign UP</h1>
+    <div class="box" style="margin-left: 560px;">
+    <form action="/display" method="GET">
+        <label for="">UserName</label><br>
+        <input type="text" placeholder="username" name="name" id="user"><br><br>
+        <label for="">Password</label><br>
+        <input type="password" placeholder="password" name="password" id="pin1"><br><br>
+        <label for="">Confirm Password</label><br>
+        <input type="password" placeholder="Confirm password" name="confirm_password" id="pin2"><br><br>
+        <button type="submit" style="margin-left: 30px;color: black;cursor: pointer;">Sign Up</button>
+    </form>
+    </div>
+    <script>
+        document.querySelector("button").style.backgroundColor="red"
+        let form=document.querySelector("form")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            pin1=document.getElementById("pin1").value
+            pin2=document.getElementById("pin2").value
+            user=document.getElementById("user").value
+            console.log(user);
+            
+            
+            if (user!="" && pin1!="" && pin2!=""){
+                if (pin1!=pin2){
+                    alert("incorrect password")
+                }else{
+                    e.target.action="/display"
+                    e.target.submit()
+                }
+            }else{
+                alert("Fill the given below")
+            }
+            
+        })
+    </script>
+</body>
+</html>
